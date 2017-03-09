@@ -19,7 +19,8 @@ public class AtomicityTest implements Runnable {
     }
 
     public static void main(String[] args) {
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        System.out.println(2<<2);
+        /*ExecutorService executorService = Executors.newCachedThreadPool();
         AtomicityTest atomicityTest = new AtomicityTest();
         executorService.execute(atomicityTest);
         while(true){
@@ -28,6 +29,6 @@ public class AtomicityTest implements Runnable {
                 System.out.println(val);
                 System.exit(0);
             }
-        }
+        }*/
     }
 }

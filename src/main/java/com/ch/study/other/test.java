@@ -1,7 +1,5 @@
 package com.ch.study.other;
 
-import com.alibaba.fastjson.JSON;
-
 import java.security.*;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
@@ -26,13 +24,13 @@ public class test {
 
         // 得到公钥
         RSAPublicKey keyPublic=(RSAPublicKey)kp.getPublic();
-        String pub = JSON.toJSONString(keyPublic.getEncoded());
-        System.out.println("公="+ pub);
+//        String pub = JSON.toJSONString(keyPublic.getEncoded());
+//        System.out.println("公="+ pub);
 
         // 得到私钥
         RSAPrivateKey keyPrivate=(RSAPrivateKey)kp.getPrivate();
-        String pri = JSON.toJSONString(keyPrivate.getEncoded());
-        System.out.println("私="+pri);
+//        String pri = JSON.toJSONString(keyPrivate.getEncoded());
+//        System.out.println("私="+pri);
 
     }
 

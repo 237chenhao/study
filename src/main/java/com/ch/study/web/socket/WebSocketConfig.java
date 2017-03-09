@@ -9,20 +9,23 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 /**
  * Created by chenhao on 2017/3/6.
  */
-
-@EnableWebSocket
 @Configuration
+@EnableWebSocket
 public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
         System.out.println("注册WebSocketHandler");
         webSocketHandlerRegistry
-                .addHandler(systemWebSocketHandler())
-                .setAllowedOrigins("*")
-                .withSockJS();
+                .addHandler(systemWebSocketHandler(),"/websocket").addInterceptors(webSocketHandshake())
+                .setAllowedOrigins("*");
+//                .withSockJS();
     }
     @Bean
     public SystemWebSocketHandler systemWebSocketHandler(){
         return new SystemWebSocketHandler();
+    }
+    @Bean
+    public WebSocketHandshake webSocketHandshake(){
+        return new WebSocketHandshake();
     }
 }

@@ -8,7 +8,9 @@
   <name>study Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <spring.version>4.1.7.RELEASE</spring.version>
+    <java.version>1.8</java.version>
+    <spring.boot.version>1.4.1.RELEASE</spring.boot.version>
+    <spring.version>4.3.3.RELEASE</spring.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <tomcat.version>8.0.28</tomcat.version>
     <shiro-version>1.2.4</shiro-version>
@@ -79,7 +81,18 @@
       <artifactId>aspectjweaver</artifactId>
       <version>1.8.9</version>
     </dependency>
-
+    <!--spring boot-->
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
 
     <!-- MyBatis -->
     <dependency>
@@ -103,35 +116,29 @@
       <version>1.0.1</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi</artifactId>
-      <version>3.10.1</version>
-    </dependency>
+
     <!--日志-->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.2</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.slf4j</groupId>-->
+      <!--<artifactId>slf4j-api</artifactId>-->
+      <!--<version>1.7.2</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.slf4j</groupId>-->
+      <!--<artifactId>slf4j-log4j12</artifactId>-->
+      <!--<version>1.7.2</version>-->
+    <!--</dependency>-->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
-
-
-
     <dependency>
-      <groupId>c3p0</groupId>
-      <artifactId>c3p0</artifactId>
-      <version>0.9.1.2</version>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.2</version>
     </dependency>
+
 
     <!--redis-->
     <dependency>
@@ -139,11 +146,7 @@
       <artifactId>jedis</artifactId>
       <version>2.4.2</version>
     </dependency>
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.2</version>
-    </dependency>
+
 
     <dependency>
       <groupId>commons-codec</groupId>
@@ -170,11 +173,11 @@
       <artifactId>commons-lang3</artifactId>
       <version>3.4</version>
     </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
+    <!--<dependency>-->
+<!--      <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
       <version>1.2.23</version>
-    </dependency>
+    </dependency>-->
     <!--
     <dependency>
         <groupId>com.google.code.gson</groupId>
@@ -249,17 +252,17 @@
         <version>3.2.1</version>
     </dependency>-->
 
-    <dependency>
-      <groupId>com.aliyun.oss</groupId>
-      <artifactId>aliyun-sdk-oss</artifactId>
-      <version>2.1.0</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>com.aliyun.oss</groupId>-->
+      <!--<artifactId>aliyun-sdk-oss</artifactId>-->
+      <!--<version>2.1.0</version>-->
+    <!--</dependency>-->
 
-    <dependency>
-      <groupId>dom4j</groupId>
-      <artifactId>dom4j</artifactId>
-      <version>1.6.1</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>dom4j</groupId>-->
+      <!--<artifactId>dom4j</artifactId>-->
+      <!--<version>1.6.1</version>-->
+    <!--</dependency>-->
 
     <!--<dependency>
         <groupId>com.cloudrelation</groupId>
@@ -304,7 +307,7 @@
     </dependency>
     -->
     <!--tomcat-embed -->
-    <dependency>
+<!--    <dependency>
       <groupId>org.apache.tomcat.embed</groupId>
       <artifactId>tomcat-embed-core</artifactId>
       <version>${tomcat.version}</version>
@@ -333,7 +336,7 @@
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat-jsp-api</artifactId>
       <version>${tomcat.version}</version>
-    </dependency>
+    </dependency>-->
 
     <!--shiro begin-->
     <!--        <dependency>
@@ -359,7 +362,7 @@
             </dependency>-->
     <!--shiro end-->
 
-    <dependency>
+    <!--<dependency>
       <groupId>org.activiti</groupId>
       <artifactId>activiti-engine</artifactId>
       <version>${activiti.version}</version>
@@ -394,7 +397,7 @@
       <groupId>org.activiti</groupId>
       <artifactId>activiti-spring</artifactId>
       <version>${activiti.version}</version>
-    </dependency>
+    </dependency>-->
   </dependencies>
   <build>
     <finalName>study</finalName>

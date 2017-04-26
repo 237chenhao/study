@@ -13,6 +13,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableWebMvc
 @Import(value = {WebSocketConfig.class})
-@ImportResource(value = {"classpath:applicationContext.xml", "file:src/main/webapp/WEB-INF/dispatcher-servlet.xml"})
+//@ImportResource(value = { "file:src/main/webapp/WEB-INF/dispatcher-servlet.xml"})
 public class MvcConfig extends WebMvcConfigurerAdapter {
 }

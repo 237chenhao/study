@@ -10,11 +10,11 @@ public class ReferenceCountingGC {
     private byte[] bigSize = new byte[2*_1MB];
 
     public static void testGC(){
-        ReferenceCountingGC a = new ReferenceCountingGC();
-        ReferenceCountingGC b = new ReferenceCountingGC();
-        a.instance =b;
-        b.instance = a;
-        a =null;
+            ReferenceCountingGC a = new ReferenceCountingGC();
+            ReferenceCountingGC b = new ReferenceCountingGC();
+            a.instance =b;
+            b.instance = a;
+        a=null;
         b=null;
 
         //假设在这行发生Gc，a和b是否能被回收？

@@ -37,5 +37,9 @@ public class CollectTest {
         Optional<Dish> collect3 = menu.stream()
                 .collect(Collectors.reducing((o, o2) -> o.getCalories() > o2.getCalories() ? o : o2));
         System.out.println(collect3.get().getCalories());
+
+
+        String name = "sdfdsf.sdf.jpg";
+        System.out.println(name.substring(name.lastIndexOf(".")+1));
     }
 }

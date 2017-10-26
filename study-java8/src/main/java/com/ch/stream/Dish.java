@@ -1,8 +1,11 @@
 package com.ch.stream;
 
+import lombok.ToString;
+
 /**
  * Created by chenhao on 2017/10/20.
  */
+@ToString
 public class Dish {
     private final String name;
     private final boolean vegetarian;

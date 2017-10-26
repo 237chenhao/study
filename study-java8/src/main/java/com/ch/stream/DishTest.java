@@ -1,9 +1,6 @@
 package com.ch.stream;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -24,6 +21,17 @@ public class DishTest {
                 new Dish("salmon",false,450, Dish.Type.FISH)
         );
 
+        Map<Dish.Type, Set<Integer>> collect = menu.stream()
+                .collect(Collectors.groupingBy(Dish::getType,
+                        Collectors.mapping(o -> {
+                            if (o.getCalories() < 400) {
+                                return 1;
+                            } else if (o.getCalories() < 700) {
+                                return 2;
+                            }
+                            return 3;
+                        }, Collectors.toCollection(HashSet::new))));
 
+        System.out.println(collect);
     }
 }

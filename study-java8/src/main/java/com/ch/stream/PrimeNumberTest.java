@@ -11,7 +11,7 @@ import java.util.stream.IntStream;
  * 求质数
  */
 public class PrimeNumberTest {
-    public static void main(String[] args) {
+    public static void main(String[] argstt) {
         Map<Boolean, Set<Integer>> collect = IntStream.range(2, 100).boxed()
                 .collect(Collectors.groupingBy(o -> isPrime(o), Collectors.toSet()));
         System.out.println(collect);

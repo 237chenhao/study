@@ -48,7 +48,7 @@ public class DishTest {
             System.out.println("you素菜");
         }
 
-        Map<Dish.Type, Set<Integer>> collect = menu.stream()
+        Map<Dish.Type, Set<Integer>> collect0 = menu.stream()
                 .collect(Collectors.groupingBy(Dish::getType,
                         Collectors.mapping(o -> {
                             if (o.getCalories() < 400) {
@@ -59,6 +59,6 @@ public class DishTest {
                             return 3;
                         }, Collectors.toCollection(HashSet::new))));
 
-        System.out.println(collect);
+        System.out.println(collect0);
     }
 }

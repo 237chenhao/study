@@ -12,10 +12,12 @@ import java.util.stream.Stream;
 public class TradeTest {
 
     public static void main(String[] args) {
+        //交易员
         Trader raoul = new Trader("Raoul","Cambridge");
         Trader mario = new Trader("Mario","Milan");
         Trader alan = new Trader("Alan","Cambridge");
         Trader brian = new Trader("Brian","Cambridge");
+        //交易
         List<Transaction> transactions = Arrays.asList(
                 new Transaction(brian,2011,300),
                 new Transaction(raoul,2012,100),
@@ -24,6 +26,7 @@ public class TradeTest {
                 new Transaction(mario,2012,700),
                 new Transaction(alan,2012,950)
         );
+
         //1
         List<Transaction> collect = transactions.stream()
                 .filter(transaction -> 2011 == transaction.getYear())
@@ -71,16 +74,21 @@ public class TradeTest {
         System.out.println("找到交易额最小的交易：\n"+first);
 
         //9
-        Stream.of(transactions.stream()
-                .collect(Collectors.groupingBy(o -> o.value > 500)))
-                .flatMap(booleanListMap -> {
-                    booleanListMap.values().stream().map(transactions1 -> transactions1.)
-                })
+        System.out.println("按交易员分组并且按交易额从大到小排序");
+        Map<String, List<Transaction>> collect4 = transactions.stream()
+                .sorted(Comparator.comparing(Transaction::getValue).reversed())
+                .collect(Collectors.groupingBy(o -> o.getTrader().getName()));
+        collect4.forEach((s, transactions1) -> {
+            System.out.println(s +"==>" + transactions1);
+        });
+
 
     }
 
 
-
+    /**
+     * 交易员
+     */
     public static class Trader{
         private final String name;
         private final String city;
@@ -101,6 +109,10 @@ public class TradeTest {
             return "[name="+name+",city="+city+"]";
         }
     }
+
+    /**
+     * 交易
+     */
     public static class Transaction{
         private final Trader trader;
         private final int year;

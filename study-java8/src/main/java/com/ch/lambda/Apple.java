@@ -1,11 +1,14 @@
 package com.ch.lambda;
 
+import lombok.ToString;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by chenhao on 2017/9/25.
  */
+@ToString
 public class Apple {
     private String color;
 

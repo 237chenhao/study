@@ -16,6 +16,7 @@ public class ConsumerTest {
                 .accept(a);
         System.out.println(a.getA());
     }
+
     private static void calculation(A a){
         a.setA(1+a.getA());
     }

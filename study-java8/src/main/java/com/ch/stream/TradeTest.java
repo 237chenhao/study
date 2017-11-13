@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 /**
  * Created by admin on 2017/10/21.
  */
+
 public class TradeTest {
 
     public static void main(String[] args) {

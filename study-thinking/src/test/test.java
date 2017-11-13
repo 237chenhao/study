@@ -16,5 +16,11 @@ public class test {
         String f = "/Users/cj-ch/";
         File[] files = new File(f).listFiles(File::isHidden);
         System.out.println(Arrays.toString(files));
+        //223a22e6
+        //00100010
+
+        System.out.println(Integer.toBinaryString(Integer.valueOf("223a22e6",16)));
+
+        System.out.println(Integer.toBinaryString(1));
     }
 }

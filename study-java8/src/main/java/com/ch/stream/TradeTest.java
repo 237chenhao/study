@@ -79,6 +79,7 @@ public class TradeTest {
         Map<String, List<Transaction>> collect4 = transactions.stream()
                 .sorted(Comparator.comparing(Transaction::getValue).reversed())
                 .collect(Collectors.groupingBy(o -> o.getTrader().getName()));
+
         collect4.forEach((s, transactions1) -> {
             System.out.println(s +"==>" + transactions1);
         });

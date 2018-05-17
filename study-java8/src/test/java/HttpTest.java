@@ -40,13 +40,11 @@ public class HttpTest {
     public static void main(String[] args) throws IOException {
         List<String> list = Files.readAllLines(Paths.get("/Users/cj-ch/Downloads/tttttttttt.txt"), StandardCharsets.UTF_8);
 
-        File file = new File("/Users/cj-ch/Downloads/去除会员菜单.sql");
+        File file = new File("/Users/cj-ch/Documents/工作/临时修复sql/去除会员菜单.sql");
 
-        try(CloseableHttpClient aDefault = HttpClients.custom()
-            .build();
-
+        try(CloseableHttpClient aDefault = HttpClients.createDefault()
         ){
-            tt(aDefault,file,"10036");
+            tt(aDefault,file,"10704");
 //            list.stream()
 //                    .map(s -> StringUtils.trim(s))
 //                    .forEach(s -> {
@@ -62,8 +60,8 @@ public class HttpTest {
     }
 
     private static void tt(CloseableHttpClient aDefault,File file,String productId) throws UnsupportedEncodingException {
-//        HttpPost post = new HttpPost("http://control.chuangjiangx.com/api/db_info/doLoadSql?JSESSIONID=43FAA7AF5B6215469463CD21B996A4CC");
-        HttpPost post = new HttpPost("https://www.baidu.com");
+        HttpPost post = new HttpPost("http://control.chuangjiangx.com/api/db_info/doLoadSql?JSESSIONID=43FAA7AF5B6215469463CD21B996A4CC");
+//        HttpPost post = new HttpPost("https://www.baidu.com");
         FileBody fileBody = new FileBody(file);
         HttpEntity entity = MultipartEntityBuilder.create()
                 .setMode(HttpMultipartMode.BROWSER_COMPATIBLE)
@@ -75,8 +73,6 @@ public class HttpTest {
                 .build();
         post.setEntity(entity);
         try(CloseableHttpResponse execute = aDefault.execute(post);){
-
-
             System.out.println(execute.getStatusLine().getStatusCode());
             System.out.println(EntityUtils.toString(execute.getEntity(),"utf-8"));
         } catch (ClientProtocolException e) {

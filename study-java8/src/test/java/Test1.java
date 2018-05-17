@@ -1,8 +1,11 @@
+import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -14,13 +17,18 @@ import java.util.stream.Collectors;
 public class Test1 {
 
     public static void main(String[] args) {
-        String v1 = "v1.2.3";
-        String v2 = "v1.1.1";
+        List<A> list = new ArrayList<>();
+        list.add(null);
+        BigDecimal totalRefundMoney = list.stream()
+                .filter(Objects::nonNull)
+                .map(A::getAmount)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        System.out.println(totalRefundMoney);
+    }
 
-        System.out.println(v1.compareTo(v2));
-
-        List<String> list = new ArrayList<>();
-        List<String> collect = list.stream().filter(s -> s.length() > 9).collect(Collectors.toList());
-        System.out.println(collect.size());
+    @Data
+    public static class A{
+        private BigDecimal amount;
+        private Long value;
     }
 }

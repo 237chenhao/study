@@ -9,6 +9,7 @@
     <module>study-vm</module>
     <module>study-thinking</module>
       <module>study-java8</module>
+      <module>study-rocketmq</module>
   </modules>
   <name>study Maven Webapp</name>
   <url>http://maven.apache.org</url>

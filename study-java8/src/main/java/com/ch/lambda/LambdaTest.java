@@ -1,9 +1,12 @@
 package com.ch.lambda;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by chenhao on 2017/10/18.
@@ -22,6 +25,14 @@ public class LambdaTest {
         BiPredicate<List<String>,String> biPredicate = List::contains;
 
         System.out.println(biPredicate.test(list,"sd"));
+
+        String[] strs = {"hello","word"};
+        Object[] objects = Stream.of(strs)
+                .flatMap(s -> Stream.of(s.split("")))
+                .distinct()
+                .toArray();
+        System.out.println(Arrays.toString(objects));
+
     }
 
     private static class A{

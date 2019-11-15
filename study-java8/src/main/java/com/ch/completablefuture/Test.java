@@ -24,12 +24,18 @@ public class Test {
 
         long start = System.currentTimeMillis();
 
-
+        List<CompletableFuture<Double>> completableFutureList = shops.stream()
+                .map(s -> CompletableFuture.supplyAsync(() -> findPrices(s, productName)))
+                .collect(Collectors.toList());
+        System.out.println("start ...");
+        CompletableFuture.allOf(completableFutureList.toArray(new CompletableFuture[completableFutureList.size()]))
+                .join();
+        System.out.println("end ...");
 //        stream(productName);
-        completable(productName);
+//        completable(productName);
 
         long end = System.currentTimeMillis();
-        System.out.println(String.format("用时:%1$d",end-start));
+        System.out.println(String.format("%s\t用时:%d", Thread.currentThread().getName(),end-start));
     }
 
     static void stream(String productName){
@@ -48,12 +54,13 @@ public class Test {
     }
 
     static double findPrices(String shopName,String productName){
-        System.out.println("查询商店:"+shopName+" 产品:"+productName+" 的价格");
+        System.out.println(Thread.currentThread().getName() + "查询商店:"+shopName+" 产品:"+productName+" 的价格");
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println(Thread.currentThread().getName() + "查询商店:"+shopName+" 产品:"+productName+" 的价格,查询完了");
         return  new Random().nextDouble()*100;
 
     }

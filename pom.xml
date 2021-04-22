@@ -20,7 +20,7 @@
         <spring.version>4.3.3.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <tomcat.version>8.0.28</tomcat.version>
-        <shiro-version>1.2.4</shiro-version>
+        <shiro-version>1.7.1</shiro-version>
         <activiti.version>5.20.0</activiti.version>
         <mybatis.generator.configurationFile>${pom.basedir}/src/main/resources/mybatis-generator-config.xml
         </mybatis.generator.configurationFile>

@@ -17,7 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring.boot.version>1.4.1.RELEASE</spring.boot.version>
-        <spring.version>4.3.3.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <tomcat.version>8.0.28</tomcat.version>
         <shiro-version>1.2.4</shiro-version>
